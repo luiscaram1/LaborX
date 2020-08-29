@@ -1,0 +1,6 @@
+framework module Pods_LaborX {
+  umbrella header "Pods-LaborX-umbrella.h"
+
+  export *
+  module * { export * }
+}

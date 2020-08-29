@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>606149050831-61ombc73ff6oomqsqh7u383tdf4u2h35.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.606149050831-61ombc73ff6oomqsqh7u383tdf4u2h35</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBIeZNh4aD8VlCS4-HjMvX-4q9zqKrWep4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>606149050831</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.legacytechnologygroup.LaborX</string>
+	<key>PROJECT_ID</key>
+	<string>laborx-d6350</string>
+	<key>STORAGE_BUCKET</key>
+	<string>laborx-d6350.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:606149050831:ios:ef45d2326e737d12c712ba</string>
+	<key>DATABASE_URL</key>
+	<string>https://laborx-d6350.firebaseio.com</string>
+</dict>
+</plist>

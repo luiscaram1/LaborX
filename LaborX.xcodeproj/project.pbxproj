@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */; };
+		C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */; };
+		C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */; };
+		C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */; };
 		C89F85A324FAF69E009CBF27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C89F85A224FAF69D009CBF27 /* GoogleService-Info.plist */; };
 		C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4324FAB8DA0089445C /* LoginViewController.swift */; };
 		C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */; };
@@ -30,6 +33,9 @@
 		45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
 		B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.release.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.release.xcconfig"; sourceTree = "<group>"; };
 		C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewController.swift; sourceTree = "<group>"; };
 		C89F85A224FAF69D009CBF27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8A49D4324FAB8DA0089445C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,9 @@
 				C8A49D4924FAB92E0089445C /* VideoPlayerViewController.swift */,
 				C8A49D4B24FAB96F0089445C /* NewConversationViewController.swift */,
 				C8A49D4D24FAB9840089445C /* ProfileViewController.swift */,
+				C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */,
+				C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */,
+				C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,15 +300,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */,
+				C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */,
 				C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */,
 				C8A49D4A24FAB92E0089445C /* VideoPlayerViewController.swift in Sources */,
 				C8A49D4C24FAB96F0089445C /* NewConversationViewController.swift in Sources */,
 				C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */,
 				C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */,
 				C8A49D5124FAC3DF0089445C /* Extensions.swift in Sources */,
+				C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */,
 				C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */,
 				C8A49D4E24FAB9840089445C /* ProfileViewController.swift in Sources */,
 				C8DA3BCD24F882C40000B009 /* SceneDelegate.swift in Sources */,
+				C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */,
 				C8A49D4824FAB9180089445C /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

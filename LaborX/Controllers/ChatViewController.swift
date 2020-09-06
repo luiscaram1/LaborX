@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageKit
+import Firebase
 
 struct Message: MessageType {
     var sender: SenderType
@@ -33,22 +34,36 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messages.append(Message(sender: selfSender,
-                                messageId: "1",
-                                sentDate: Date(),
-                                kind: .text("Hello this is my message 1")))
-        messages.append(Message(sender: selfSender,
-                                messageId: "1",
-                                sentDate: Date(),
-                                kind: .text("Hello this is my message 2")))
-        messages.append(Message(sender: selfSender,
-                                messageId: "1",
-                                sentDate: Date(),
-                                kind: .text("Hello this is my message 3, this is longer and lets he hoe it looks")))
+//        Database.database().reference().child("labor-78e70").child("1").child("Current Location").child((Auth.auth().currentUser?.uid)!).child("Like_Deals_Dish").observeSingleEvent(of: .value) { datasnapshot in
+//
+//            if datasnapshot.exists() {
+//                var keyArray = [String]()
+//
+//                for snap in datasnapshot.children.allObjects {
+//                    if let snap = snap as? DataSnapshot {
+//                        let key = snap.key
+//                        keyArray.append(key)
+//                    }
+//                }
+//            }
 
-        messagesCollectionView.messagesDataSource = self
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
+        
+//        messages.append(Message(sender: selfSender,
+//                                messageId: "1",
+//                                sentDate: Date(),
+//                                kind: .text("Hello this is my message 1")))
+//        messages.append(Message(sender: selfSender,
+//                                messageId: "1",
+//                                sentDate: Date(),
+//                                kind: .text("Hello this is my message 2")))
+//        messages.append(Message(sender: selfSender,
+//                                messageId: "1",
+//                                sentDate: Date(),
+//                                kind: .text("Hello this is my message 3, this is longer and lets he how it looks")))
+//
+//        messagesCollectionView.messagesDataSource = self
+//        messagesCollectionView.messagesLayoutDelegate = self
+//        messagesCollectionView.messagesDisplayDelegate = self
     }
 
 }

@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import JGProgressHUD
+import FirebaseStorage
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -312,6 +314,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
+        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            print(url)
+            uploadToCloud(fileUrl: url)
+        }
+        
         
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
@@ -322,6 +329,22 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadToCloud(fileUrl : URL) {
+        let storage = Storage.storage()
+        let data = Data()
+        let storageRef = storage.reference()
+        let localFule = fileUrl
+        let photoRef = storageRef.child("Another")
+        
+        let uploadTask = photoRef.putFile(from: localFule, metadata: nil) { (metadata, err) in
+            guard let metadata = metadata else {
+                print(err?.localizedDescription as Any)
+                return
+            }
+            print("Photo Uploaded")
+        }
     }
     
 }

@@ -39,12 +39,18 @@ extension DatabaseManager {
     }
     
     /// Inserts new user to Databse
-    public func insertUser(with user: ChatAppUser) {
+    public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void) {
         database.child(user.safeEmail).setValue([
             "first_name": user.firstName,
             "last_name": user.lastName
-            //"email_address": user.emailAddress
-        ])
+        ], withCompletionBlock: {error, _ in
+            guard error == nil else {
+                print("Failed to wirte to Database")
+                completion(false)
+                return
+            }
+            completion(true)
+        })
     }
 }
     
@@ -59,6 +65,9 @@ extension DatabaseManager {
             return safeEmail
         }
         
-        //let profilePictureUrl: String
+        var profilePictureFileName: String {
+            
+            return "\(safeEmail)_profile_picture.png"
+        }
     }
     

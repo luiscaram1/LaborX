@@ -227,10 +227,28 @@ class RegisterViewController: UIViewController {
                     print("Error creating user")
                     return
                 }
-                
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                                    lastName: lastName,
-                                                                    emailAddress: email))
+                let chatUser = ChatAppUser(firstName: firstName,
+                                           lastName: lastName,
+                                           emailAddress: email)
+                DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                    if success {
+                        // upload image
+                        guard let image = strongSelf.imageview.image,
+                            let data = image.pngData() else {
+                            return
+                        }
+                        let filename = chatUser.profilePictureFileName
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: {result in
+                            switch result {
+                            case .success(let downloadUrl):
+                                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                print(downloadUrl)
+                            case .failure(let error):
+                                print("Storage Manager Error \(error)")
+                            }
+                        })
+                    }
+                })
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
                 
@@ -314,12 +332,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-            print(url)
-            uploadToCloud(fileUrl: url)
-        }
-        
-        
+        print(info)
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
         }
@@ -327,24 +340,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         self.imageview.image = selectedImage
     }
     
+}
+        
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func uploadToCloud(fileUrl : URL) {
-        let storage = Storage.storage()
-        let data = Data()
-        let storageRef = storage.reference()
-        let localFule = fileUrl
-        let photoRef = storageRef.child("Another")
         
-        let uploadTask = photoRef.putFile(from: localFule, metadata: nil) { (metadata, err) in
-            guard let metadata = metadata else {
-                print(err?.localizedDescription as Any)
-                return
-            }
-            print("Photo Uploaded")
-        }
     }
+
     
-}

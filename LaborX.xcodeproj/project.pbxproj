@@ -20,6 +20,7 @@
 		C8A49D4C24FAB96F0089445C /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4B24FAB96F0089445C /* NewConversationViewController.swift */; };
 		C8A49D4E24FAB9840089445C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4D24FAB9840089445C /* ProfileViewController.swift */; };
 		C8A49D5124FAC3DF0089445C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D5024FAC3DF0089445C /* Extensions.swift */; };
+		C8BFF5A62505701E008D9DF5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BFF5A52505701E008D9DF5 /* StorageManager.swift */; };
 		C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DA3BCA24F882C40000B009 /* AppDelegate.swift */; };
 		C8DA3BCD24F882C40000B009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DA3BCC24F882C40000B009 /* SceneDelegate.swift */; };
 		C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DA3BCE24F882C40000B009 /* ConversationsViewController.swift */; };
@@ -46,6 +47,7 @@
 		C8A49D4B24FAB96F0089445C /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		C8A49D4D24FAB9840089445C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C8A49D5024FAC3DF0089445C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C8BFF5A52505701E008D9DF5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C8DA3BC724F882C40000B009 /* LaborX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaborX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DA3BCA24F882C40000B009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8DA3BCC24F882C40000B009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C8DA3BCC24F882C40000B009 /* SceneDelegate.swift */,
 				C8A49D5024FAC3DF0089445C /* Extensions.swift */,
 				C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */,
+				C8BFF5A52505701E008D9DF5 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */,
 				C82E2C6724FB4D4E006CFDED /* ChatViewController.swift in Sources */,
 				C8A49D4824FAB9180089445C /* PhotoViewerViewController.swift in Sources */,
+				C8BFF5A62505701E008D9DF5 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

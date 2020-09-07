@@ -11,6 +11,9 @@ import FirebaseDatabase
 
 class RequestsViewController: UIViewController {
     
+    
+    private let database  = Database.database().reference()
+    
     @IBOutlet weak var requestorsName: UITextField!
     @IBOutlet weak var requestorsEmail: UITextField!    
     @IBOutlet weak var startField: UITextField!
@@ -218,8 +221,7 @@ class RequestsViewController: UIViewController {
     }
     
     @IBAction func submitRequest(_ sender: Any) {
-        print("tapped")
-        
+        print("tapped")        
         if(locationField.text == "Select Location" && requestorsName.text == "" || requestorsEmail.text == "") {
             let alert = UIAlertController(title: "Some Fields are missing", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
@@ -257,43 +259,66 @@ class RequestsViewController: UIViewController {
         }
         else
         {
-            guard let key = ref.child("Requests").child("RequestID_\(startField.text!)").key else { return }
-        let Request = ["name": requestorsName.text!,
-                      "email": requestorsEmail.text!,
-                      "startdate": startField.text!,
-                      "enddate": endDate.text!,
-                      "location": locationField.text!,
-                      "ServiceType": typeOfServiceField.text!,
-                      "shiftOneStartTime": shiftOneStartField.text!,
-                      "shiftOneQuantityWorkers": shiftOneWorkerQuantityField.text!,
-                      "shiftOneNumHours": shiftOneHoursField.text!,
-                      "shiftTwoStartTime": shiftTwoStartField.text!,
-                      "shiftTwoQuantityWorkers": shiftTwoWorkerQuantityField.text!,
-                      "shiftTwoNumHours": shiftTwoHoursField.text!,
-                      "shiftThreeStartTime": shiftThreeStartField.text!,
-                      "shiftThreeQuantityWorkers": shiftThreeWorkerQuantityField.text!,
-                      "shiftThreeNumHours": shiftThreeHoursField.text!,
-                      "twic": twicLbl.text!]
-        let childUpdates = ["/user-Requests/\(key)/": Request]
-        ref.updateChildValues(childUpdates)
-        
-        requestorsName.text = ""
-        requestorsEmail.text = ""
-        startField.text = ""
-        endDate.text = ""
-        valueSelected = ""
-        locationField.text = ""
-        shiftOneHoursField.text = ""
-        shiftOneWorkerQuantityField.text = ""
-        shiftOneStartField.text = ""
-        shiftTwoHoursField.text = ""
-        shiftTwoWorkerQuantityField.text = ""
-        shiftTwoStartField.text = ""
-        shiftThreeHoursField.text = ""
-        shiftThreeWorkerQuantityField.text = ""
-        shiftThreeStartField.text = ""
-        typeOfServiceField.text = ""
+            
+            //create that array
+           
+            
+            self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
+                        if var usersCollection = snapshot.value as? [[String: String]] {
+                            //append to user dictionary
+                             let newCollection: [[String: String]] = [
+                                ["name": self.requestorsName.text!,
+                                 "email": self.requestorsEmail.text!,
+                                 "startdate": self.startField.text!,
+                                 "enddate": self.endDate.text!,
+                                 "location": self.locationField.text!,
+                                 "ServiceType": self.typeOfServiceField.text!,
+                                 "shiftOneStartTime": self.shiftOneStartField.text!,
+                                 "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+                                 "shiftOneNumHours": self.shiftOneHoursField.text!,
+                                 "shiftTwoStartTime": self.shiftTwoStartField.text!,
+                                 "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+                                 "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+                                 "shiftThreeStartTime": self.shiftThreeStartField.text!,
+                                 "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+                                 "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+                                 "twic": self.twicLbl.text!]
+                                           ]
+                            usersCollection.append(contentsOf: newCollection)
+
+                            self.database.child("Requests").setValue(usersCollection)
+
+                        }
+                        else {
+                            //create that array
+                            let usersCollection: [[String: String]] = [
+                                ["name": self.requestorsName.text!,
+                                "email": self.requestorsEmail.text!,
+                                "startdate": self.startField.text!,
+                                "enddate": self.endDate.text!,
+                                "location": self.locationField.text!,
+                                "ServiceType": self.typeOfServiceField.text!,
+                                "shiftOneStartTime": self.shiftOneStartField.text!,
+                                "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+                                "shiftOneNumHours": self.shiftOneHoursField.text!,
+                                "shiftTwoStartTime": self.shiftTwoStartField.text!,
+                                "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+                                "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+                                "shiftThreeStartTime": self.shiftThreeStartField.text!,
+                                "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+                                "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+                                "twic": self.twicLbl.text!]
+                            ]
+                            
+                            self.database.child("Requests").setValue(usersCollection)
+               }
+                
+            })
+            
+           self.navigationController?.dismiss(animated: true, completion: nil)
+           
         }
+         
     }
 }
 
@@ -404,5 +429,3 @@ extension RequestsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
            present(alert, animated: true)
        }
 }
-
-

@@ -243,8 +243,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="u0t-cQ-MhL" kind="relationship" relationship="viewControllers" id="Rt3-LR-zn0"/>
                         <segue destination="ydM-kH-7ES" kind="relationship" relationship="viewControllers" id="PyM-Ct-149"/>
+                        <segue destination="u0t-cQ-MhL" kind="relationship" relationship="viewControllers" id="Rt3-LR-zn0"/>
                         <segue destination="h4P-In-dmY" kind="relationship" relationship="viewControllers" id="tWF-Uf-B8f"/>
                         <segue destination="9Xb-2K-fqX" kind="relationship" relationship="viewControllers" id="YQr-Ja-22g"/>
                         <segue destination="e2O-H7-9ZW" kind="relationship" relationship="viewControllers" id="126-IK-dOt"/>

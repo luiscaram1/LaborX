@@ -8,10 +8,11 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
-class RequestsViewController: UIViewController {
+class RequestsViewController: UIViewController, UITextFieldDelegate {
     
-    
+
     private let database  = Database.database().reference()
     
     @IBOutlet weak var requestorsName: UITextField!
@@ -68,10 +69,29 @@ class RequestsViewController: UIViewController {
     var defaultShiftTwoNumHours = "0"
     var defaultShiftThreeWorkerQuantity = "0"
     var defaultShiftThreeNumHours = "0"
+    
+    
+    private let emailField: UITextField = {
+               let field = UITextField()
+               field.autocapitalizationType = .none
+               field.autocorrectionType = .no
+               field.returnKeyType = .continue
+               field.layer.cornerRadius = 12
+               field.layer.borderWidth = 1
+               field.layer.borderColor = UIColor.lightGray.cgColor
+               field.placeholder = "Email Address..."
+               field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+               field.leftViewMode = .always
+               field.backgroundColor = .white
+               return field
+           }()
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailField.delegate = self
+ 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(addTapped))
 
         
@@ -165,6 +185,22 @@ class RequestsViewController: UIViewController {
         view.endEditing(true)
 
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+      validateAuth()
+    }
+    
+    private func validateAuth(){
+        
+        if FirebaseAuth.Auth.auth().currentUser == nil {
+            let vc = LoginViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: false)
+        }
+        
     }
     
     @IBAction func actionTwicTriggered(_ sender: Any) {

@@ -12,6 +12,7 @@
 		C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */; };
 		C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */; };
 		C82E2C6724FB4D4E006CFDED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */; };
+		C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */; };
 		C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8969A2225028DD6008139A3 /* GoogleService-Info.plist */; };
 		C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4324FAB8DA0089445C /* LoginViewController.swift */; };
 		C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */; };
@@ -39,6 +40,7 @@
 		C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewController.swift; sourceTree = "<group>"; };
 		C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		C8969A2225028DD6008139A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8A49D4324FAB8DA0089445C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				C8A49D4224FAB7B00089445C /* Storyboards */,
 				C8DA3BD324F882C50000B009 /* Assets.xcassets */,
+				C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */,
 				C8A49D4E24FAB9840089445C /* ProfileViewController.swift in Sources */,
 				C8DA3BCD24F882C40000B009 /* SceneDelegate.swift in Sources */,
+				C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */,
 				C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */,
 				C82E2C6724FB4D4E006CFDED /* ChatViewController.swift in Sources */,
 				C8A49D4824FAB9180089445C /* PhotoViewerViewController.swift in Sources */,
@@ -465,6 +469,7 @@
 			baseConfigurationReference = 45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7J4R6V7AT;
 				INFOPLIST_FILE = LaborX/Info.plist;
@@ -475,6 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -485,6 +491,7 @@
 			baseConfigurationReference = B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7J4R6V7AT;
 				INFOPLIST_FILE = LaborX/Info.plist;
@@ -495,6 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

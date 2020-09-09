@@ -186,22 +186,22 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-      validateAuth()
-    }
-    
-    private func validateAuth(){
-        
-        if FirebaseAuth.Auth.auth().currentUser == nil {
-            let vc = LoginViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            present(nav, animated: false)
-        }
-        
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//      validateAuth()
+//    }
+//    
+//    private func validateAuth(){
+//        
+//        if FirebaseAuth.Auth.auth().currentUser == nil {
+//            let vc = LoginViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            nav.modalPresentationStyle = .fullScreen
+//            present(nav, animated: false)
+//        }
+//        
+//    }
     
     @IBAction func actionTwicTriggered(_ sender: Any) {
         

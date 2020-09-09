@@ -123,7 +123,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                                   messageId: messageId,
                                   sentDate: Date(),
                                   kind: .text(text))
-            DatabaseManager.shared.createNewConversation(with: otherUserEmail, firstMessage: message, completion: { success in
+            DatabaseManager.shared.createNewConversation(with: otherUserEmail, name: self.title ?? "User", firstMessage: message, completion: { success in
                 if  success {
                     print("message sent")
                 }
@@ -140,14 +140,12 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     
     private func createMessageID() -> String? {
         //date, otherUserEmail, senderEmail, randomInt
-        
-        
-        guard let currentUserEmail = UserDefaults.standard.value(forKey: "email") as? String else {
-                return nil
-        }
-        
-        let safeCurrentEmail = DatabaseManager.safeEmail(emailAddress: currentUserEmail)
         let dateString = Self.dateFormatter.string(from: Date())
+        guard let currentUserEmail = UserDefaults.standard.value(forKey: "email") as? String else {
+            return nil
+        }
+        let safeCurrentEmail = DatabaseManager.safeEmail(emailAddress: currentUserEmail)
+        
         let newIdentifier = "\(otherUserEmail)_\(safeCurrentEmail)_\(dateString)"
         print("Created Message ID: \(newIdentifier)")
         return newIdentifier
@@ -161,7 +159,9 @@ extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, Messag
             return sender
         }
         fatalError("Self Sender is Nil, email should be cached")
-        return Sender(photoURL: "", senderId: "12", displayName: "")
+        return Sender(photoURL: "",
+                      senderId: "12",
+                      displayName: "")
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

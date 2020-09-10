@@ -46,6 +46,8 @@ class ConversationsViewController: UIViewController {
         label.isHidden = true
         return label
     }()
+    
+    private var loginObserver: NSObjectProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +56,25 @@ class ConversationsViewController: UIViewController {
                                                             action: #selector(didTapComposeButton))
         view.addSubview(tableView)
         view.addSubview(noConversationLabel)
-        
         setupTableView()
         fetchConversation()
         startListeningForConversations()
+        
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLogInNotification, object: nil, queue: .main, using: {[weak self] _ in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.startListeningForConversations()
+        })
         
     }
     
     private func startListeningForConversations() {
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
             return
+        }
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
         }
         
         print("starting conversation fetch...")
@@ -111,17 +122,17 @@ class ConversationsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
-    private func validateAuth(){
-
-        if FirebaseAuth.Auth.auth().currentUser == nil {
-            let vc = LoginViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            present(nav, animated: false)
-        }
-
-    }
+    
+    //    private func validateAuth(){
+    //
+    //        if FirebaseAuth.Auth.auth().currentUser == nil {
+    //            let vc = LoginViewController()
+    //            let nav = UINavigationController(rootViewController: vc)
+    //            nav.modalPresentationStyle = .fullScreen
+    //            present(nav, animated: false)
+    //        }
+    //
+    //    }
     
     private func setupTableView() {
         tableView.delegate = self
@@ -131,7 +142,7 @@ class ConversationsViewController: UIViewController {
     private func fetchConversation(){
         tableView.isHidden = false
     }
-   
+    
 }
 
 extension ConversationsViewController: UITableViewDelegate, UITableViewDataSource  {
@@ -159,6 +170,28 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //begin delete
+            let conversationId = conversations[indexPath.row].id
+            tableView.beginUpdates()
+            
+            
+            DatabaseManager.shared.deleteConversation(conversationId: conversationId, completion: { [weak self] success in
+                if success {
+                    self?.conversations.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .left)
+                }
+            })
+            
+            tableView.endUpdates()
+        }
     }
     
 }

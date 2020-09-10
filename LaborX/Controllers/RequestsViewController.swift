@@ -90,6 +90,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        validateAuth()
+        
         emailField.delegate = self
  
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(addTapped))
@@ -202,6 +204,17 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 //        }
 //        
 //    }
+    
+    private func validateAuth(){
+
+        if FirebaseAuth.Auth.auth().currentUser == nil {
+            let vc = LoginViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: false)
+        }
+
+    }
     
     @IBAction func actionTwicTriggered(_ sender: Any) {
         

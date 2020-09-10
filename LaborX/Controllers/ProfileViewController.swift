@@ -98,21 +98,21 @@ extension ProfileViewController:  UITableViewDelegate, UITableViewDataSource {
                                             style: .destructive,
                                             handler: { [weak self] _ in
                                                 
-                                                guard let strongSelf = self else {
-                                                    return
-                                                }
-                                                
-                                                do {
-                                                    try FirebaseAuth.Auth.auth().signOut()
-                                                    
-                                                    let vc = LoginViewController()
-                                                    let nav = UINavigationController(rootViewController: vc)
-                                                    nav.modalPresentationStyle = .fullScreen
-                                                    strongSelf.present(nav, animated: true)
-                                                }
-                                                catch{
-                                                    print("Failed to log Out")
-                                                }
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                do {
+                    try FirebaseAuth.Auth.auth().signOut()
+                    print("logout succesfull")
+                    let vc = LoginViewController()
+                    let nav = UINavigationController(rootViewController: vc)
+                    nav.modalPresentationStyle = .fullScreen
+                    strongSelf.present(nav, animated: true)
+                }
+                catch{
+                    print("Failed to log Out")
+                }
                                         
         }))
         

@@ -13,6 +13,7 @@
 		C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */; };
 		C82E2C6724FB4D4E006CFDED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */; };
 		C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */; };
+		C874A88B2509EF8200767D1E /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874A88A2509EF8200767D1E /* NewConversationCell.swift */; };
 		C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8969A2225028DD6008139A3 /* GoogleService-Info.plist */; };
 		C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4324FAB8DA0089445C /* LoginViewController.swift */; };
 		C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */; };
@@ -41,6 +42,7 @@
 		C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewController.swift; sourceTree = "<group>"; };
 		C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		C874A88A2509EF8200767D1E /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		C8969A2225028DD6008139A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8A49D4324FAB8DA0089445C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				C8A49D4224FAB7B00089445C /* Storyboards */,
 				C8DA3BD324F882C50000B009 /* Assets.xcassets */,
 				C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */,
+				C874A88A2509EF8200767D1E /* NewConversationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C8A49D4C24FAB96F0089445C /* NewConversationViewController.swift in Sources */,
 				C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */,
 				C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */,
+				C874A88B2509EF8200767D1E /* NewConversationCell.swift in Sources */,
 				C8A49D5124FAC3DF0089445C /* Extensions.swift in Sources */,
 				C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */,
 				C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */,

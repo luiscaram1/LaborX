@@ -54,6 +54,7 @@ class ConversationsViewController: UIViewController {
                                                             action: #selector(didTapComposeButton))
         view.addSubview(tableView)
         view.addSubview(noConversationLabel)
+        
         setupTableView()
         fetchConversation()
         startListeningForConversations()

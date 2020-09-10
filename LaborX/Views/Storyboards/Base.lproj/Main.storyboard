@@ -258,7 +258,7 @@
         <scene sceneID="7rF-JG-W4f">
             <objects>
                 <navigationController id="h4P-In-dmY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Active Workers" id="JtA-AF-cvx"/>
+                    <tabBarItem key="tabBarItem" title="Active Workers" image="person.3.fill" catalog="system" id="JtA-AF-cvx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Vye-Cu-dFA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -275,7 +275,7 @@
         <scene sceneID="Tvr-aa-2hN">
             <objects>
                 <navigationController id="9Xb-2K-fqX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="Z1I-ts-a60"/>
+                    <tabBarItem key="tabBarItem" title="History" image="archivebox.fill" catalog="system" id="Z1I-ts-a60"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1h2-bu-xCx">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -292,7 +292,7 @@
         <scene sceneID="YNn-bJ-UFf">
             <objects>
                 <navigationController id="u0t-cQ-MhL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" id="f68-NJ-Rgr"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message.fill" catalog="system" id="f68-NJ-Rgr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="qU0-Bn-4Jf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -309,7 +309,7 @@
         <scene sceneID="cpN-Of-9D0">
             <objects>
                 <navigationController id="e2O-H7-9ZW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="gT1-7D-7nV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="gT1-7D-7nV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="d2e-9D-0jt">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -430,7 +430,7 @@
         <scene sceneID="811-px-rAT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydM-kH-7ES" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Requests" id="13r-3Q-rvc"/>
+                    <tabBarItem key="tabBarItem" title="Requests" image="rectangle.stack.person.crop.fill" catalog="system" id="13r-3Q-rvc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AtD-Kl-jgw">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -447,6 +447,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archivebox.fill" catalog="system" width="128" height="106"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="rectangle.stack.person.crop.fill" catalog="system" width="128" height="122"/>
         <namedColor name="incomingAudioMessageTint">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C816F840250C08B1004DAE23 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */; };
 		C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */; };
 		C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */; };
 		C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */; };
@@ -36,6 +37,7 @@
 		37794A551E78A3ED560AE591 /* Pods_LaborX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaborX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
 		B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.release.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.release.xcconfig"; sourceTree = "<group>"; };
+		C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */,
 				C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */,
 				C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */,
+				C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				C8A49D5124FAC3DF0089445C /* Extensions.swift in Sources */,
 				C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */,
 				C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */,
+				C816F840250C08B1004DAE23 /* LocationPickerViewController.swift in Sources */,
 				C8A49D4E24FAB9840089445C /* ProfileViewController.swift in Sources */,
 				C8DA3BCD24F882C40000B009 /* SceneDelegate.swift in Sources */,
 				C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */,

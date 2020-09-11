@@ -32,6 +32,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var twicSwitch: UISwitch!
     @IBOutlet weak var twicLbl: UILabel!
     @IBOutlet weak var typeOfServiceField: UITextField!
+    @IBOutlet weak var formatSubmitButton: UIButton!
     
     private var datePicker: UIDatePicker?
     private var datePickerEnd: UIDatePicker?
@@ -71,28 +72,78 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     var defaultShiftThreeNumHours = "0"
     
     
-    private let emailField: UITextField = {
-               let field = UITextField()
-               field.autocapitalizationType = .none
-               field.autocorrectionType = .no
-               field.returnKeyType = .continue
-               field.layer.cornerRadius = 12
-               field.layer.borderWidth = 1
-               field.layer.borderColor = UIColor.lightGray.cgColor
-               field.placeholder = "Email Address..."
-               field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
-               field.leftViewMode = .always
-               field.backgroundColor = .white
-               return field
-           }()
+//    private let emailField: UITextField = {
+//               let field = UITextField()
+//               field.autocapitalizationType = .none
+//               field.autocorrectionType = .no
+//               field.returnKeyType = .continue
+//               field.layer.cornerRadius = 12
+//               field.layer.borderWidth = 1
+//               field.layer.borderColor = UIColor.lightGray.cgColor
+//               field.placeholder = "Email Address..."
+//               field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+//               field.leftViewMode = .always
+//               field.backgroundColor = .secondarySystemBackground
+//               return field
+//           }()
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         validateAuth()
+            
+//        requestorsName.layer.borderColor = UIColor.blue.cgColor
+//        requestorsName.layer.borderWidth = 2
+//
+//        requestorsEmail.layer.borderColor = UIColor.blue.cgColor
+//        requestorsEmail.layer.borderWidth = 2
+//
+//        startField.layer.borderColor = UIColor.blue.cgColor
+//        startField.layer.borderWidth = 2
+//
+//        endDate.layer.borderColor = UIColor.blue.cgColor
+//        endDate.layer.borderWidth = 2
+//
+//        locationField.layer.borderColor = UIColor.blue.cgColor
+//        locationField.layer.borderWidth = 2
+//
+//        shiftOneHoursField.layer.borderColor = UIColor.blue.cgColor
+//        shiftOneHoursField.layer.borderWidth = 2
+//
+//        shiftOneStartField.layer.borderColor = UIColor.blue.cgColor
+//        shiftOneStartField.layer.borderWidth = 2
+//
+//        shiftOneWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
+//        shiftOneWorkerQuantityField.layer.borderWidth = 2
+//
+//        shiftTwoHoursField.layer.borderColor = UIColor.blue.cgColor
+//        shiftTwoHoursField.layer.borderWidth = 2
+//
+//        shiftTwoStartField.layer.borderColor = UIColor.blue.cgColor
+//        shiftTwoStartField.layer.borderWidth = 2
+//
+//        shiftTwoWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
+//        shiftTwoWorkerQuantityField.layer.borderWidth = 2
+//
+//        shiftThreeHoursField.layer.borderColor = UIColor.blue.cgColor
+//        shiftThreeHoursField.layer.borderWidth = 2
+//
+//        shiftThreeStartField.layer.borderColor = UIColor.blue.cgColor
+//        shiftThreeStartField.layer.borderWidth = 2
+//
+//        shiftThreeWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
+//        shiftThreeWorkerQuantityField.layer.borderWidth = 2
+//
+//        typeOfServiceField.layer.borderColor = UIColor.blue.cgColor
+//        typeOfServiceField.layer.borderWidth = 2
         
-        emailField.delegate = self
+        formatSubmitButton.layer.cornerRadius = 12
+        formatSubmitButton.layer.backgroundColor = UIColor.orange.cgColor
+        
+//        emailField.delegate = self
+        
+        view.backgroundColor = .systemBackground
  
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(addTapped))
 
@@ -362,9 +413,33 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                             self.database.child("Requests").setValue(usersCollection)
                }
                 
+                self.requestorsName.text! = ""
+                self.requestorsEmail.text! = ""
+                self.locationField.text = self.defaultLocation
+                self.typeOfServiceField.text = self.defaultServiceType
+                self.shiftOneStartField.text! = ""
+                self.shiftOneWorkerQuantityField.text = ""
+                self.shiftOneHoursField.text! = ""
+                self.shiftTwoStartField.text! = ""
+                self.shiftTwoWorkerQuantityField.text! = ""
+                self.shiftTwoHoursField.text! = ""
+                self.shiftThreeStartField.text! = ""
+                self.shiftThreeWorkerQuantityField.text! = ""
+                self.shiftThreeHoursField.text! = ""
+                self.twicSwitch.isOn = false
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
+                self.startField.text = dateFormatter.string(from: Date())
+                self.view.endEditing(true)
+                
+
+                dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
+                self.endDate.text = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
+                self.view.endEditing(true)
+     
             })
             
-           self.navigationController?.dismiss(animated: true, completion: nil)
+           //self.navigationController?.dismiss(animated: true, completion: nil)
            
         }
          

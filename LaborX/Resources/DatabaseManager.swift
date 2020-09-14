@@ -63,7 +63,8 @@ extension DatabaseManager {
     public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void) {
         database.child(user.safeEmail).setValue([
             "first_name": user.firstName,
-            "last_name": user.lastName
+            "last_name": user.lastName,
+            "location": user.userlocation
         ], withCompletionBlock: {error, _ in
             guard error == nil else {
                 print("Failed to wirte to Database")
@@ -77,6 +78,7 @@ extension DatabaseManager {
                     //append to user dictionary
                     let newElement = [
                         "name": user.firstName + " " + user.lastName,
+                        "location": user.userlocation,
                         "email": user.safeEmail
                     ]
                     usersCollection.append(newElement)
@@ -96,6 +98,7 @@ extension DatabaseManager {
                     let newCollection: [[String: String]] = [
                         [
                             "name": user.firstName + " " + user.lastName,
+                            "location": user.userlocation,
                             "email": user.safeEmail
                         ]
                     ]
@@ -727,7 +730,9 @@ extension DatabaseManager {
     struct ChatAppUser {
         let firstName: String
         let lastName: String
+        let userlocation: String
         let emailAddress: String
+        
         
         var safeEmail: String {
             var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")

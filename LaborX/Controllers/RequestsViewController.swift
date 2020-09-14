@@ -15,8 +15,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 
     private let database  = Database.database().reference()
     
-    @IBOutlet weak var requestorsName: UITextField!
-    @IBOutlet weak var requestorsEmail: UITextField!    
+//    @IBOutlet weak var requestorsName: UITextField!
+//    @IBOutlet weak var requestorsEmail: UITextField!
     @IBOutlet weak var startField: UITextField!
     @IBOutlet weak var endDate: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -55,7 +55,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     var shiftThreeNumHoursPicker = UIPickerView()
 
 
-    var location = ["Select Location", "Tacoma", "Oxnard", "Los Angeles", "Jacksonville", "Brunswick", "Savannah", "Newport News", "Baltimore", "Elizabeth", "Grensgurg", "Lafayette", "Chattanooga", "Smyrna", "Canton", "Galveston"]
+//    var location = ["Select Location", "Tacoma", "Oxnard", "Los Angeles", "Jacksonville", "Brunswick", "Savannah", "Newport News", "Baltimore", "Elizabeth", "Grensgurg", "Lafayette", "Chattanooga", "Smyrna", "Canton", "Galveston"]
     var serviceType = ["Select Service Type", "Accesory", "PDI", "Drivers", "Port Modifications"]
     var shiftOneWorkerQuantity = ["# Workers","1","2","3","4","5","6","7","8","9","10"]
     var shiftOneHoursQuantity = ["# Hours","1","2","3","4","5","6","7","8","9","10"]
@@ -122,7 +122,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             shiftTwoStartField.inputView = shiftTwoTimePicker
             shiftThreeStartField.inputView = shiftThreeTimePicker
             
-            locationField.inputView = locationPickerView
+//            locationField.inputView = locationPickerView
             typeOfServiceField.inputView = serviceTypePicker
             shiftOneWorkerQuantityField.inputView = shiftOneWorkerQuantityPicker
             shiftOneHoursField.inputView = shiftOneNumHoursPicker
@@ -131,7 +131,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             shiftThreeWorkerQuantityField.inputView = shiftThreeWorkerQuantityPicker
             shiftThreeHoursField.inputView = shiftThreeNumHoursPicker
         
-            locationField.text = defaultLocation
+//            locationField.text = defaultLocation
             typeOfServiceField.text = defaultServiceType
         
             locationPickerView.delegate = self
@@ -261,41 +261,44 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitRequest(_ sender: Any) {
         print("tapped")        
-        if(locationField.text == "Select Location" && requestorsName.text == "" || requestorsEmail.text == "") {
-            let alert = UIAlertController(title: "Some Fields are missing", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
-        else if(locationField.text == "Select Location") {
-            let alert = UIAlertController(title: "Please Select Location", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
-            else if(typeOfServiceField.text == "Select Service Type") {
+//        if(locationField.text == "Select Location" && requestorsName.text == "" || requestorsEmail.text == "") {
+//            let alert = UIAlertController(title: "Some Fields are missing", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
+//            // add an action (button)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//        else
+        
+//        if(locationField.text == "Select Location") {
+//            let alert = UIAlertController(title: "Please Select Location", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
+//            // add an action (button)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//        }
+            //else
+        if(typeOfServiceField.text == "Select Service Type") {
                 let alert = UIAlertController(title: "Please Select Service", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
             }
-        else if(requestorsName.text == "") {
-            let alert = UIAlertController(title: "Missing Requestors Name", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
-        else if(requestorsEmail.text == "") {
-            let alert = UIAlertController(title: "Missing Requestors Email", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
+//        else if(requestorsName.text == "") {
+//            let alert = UIAlertController(title: "Missing Requestors Name", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
+//            // add an action (button)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//        else if(requestorsEmail.text == "") {
+//            let alert = UIAlertController(title: "Missing Requestors Email", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
+//            // add an action (button)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//        }
         else
         {
             
@@ -306,11 +309,11 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                         if var usersCollection = snapshot.value as? [[String: String]] {
                             //append to user dictionary
                              let newCollection: [[String: String]] = [
-                                ["name": self.requestorsName.text!,
-                                 "email": self.requestorsEmail.text!,
-                                 "startdate": self.startField.text!,
+//                                ["name": self.requestorsName.text!,
+//                                 "email": self.requestorsEmail.text!,
+                                 ["startdate": self.startField.text!,
                                  "enddate": self.endDate.text!,
-                                 "location": self.locationField.text!,
+//                                 "location": self.locationField.text!,
                                  "ServiceType": self.typeOfServiceField.text!,
                                  "shiftOneStartTime": self.shiftOneStartField.text!,
                                  "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
@@ -331,11 +334,11 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                         else {
                             //create that array
                             let usersCollection: [[String: String]] = [
-                                ["name": self.requestorsName.text!,
-                                "email": self.requestorsEmail.text!,
-                                "startdate": self.startField.text!,
+//                                ["name": self.requestorsName.text!,
+//                                "email": self.requestorsEmail.text!,
+                                ["startdate": self.startField.text!,
                                 "enddate": self.endDate.text!,
-                                "location": self.locationField.text!,
+//                                "location": self.locationField.text!,
                                 "ServiceType": self.typeOfServiceField.text!,
                                 "shiftOneStartTime": self.shiftOneStartField.text!,
                                 "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
@@ -352,9 +355,9 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                             self.database.child("Requests").setValue(usersCollection)
                }
                 
-                self.requestorsName.text! = ""
-                self.requestorsEmail.text! = ""
-                self.locationField.text = self.defaultLocation
+//                self.requestorsName.text! = ""
+//                self.requestorsEmail.text! = ""
+//                self.locationField.text = self.defaultLocation
                 self.typeOfServiceField.text = self.defaultServiceType
                 self.shiftOneStartField.text! = ""
                 self.shiftOneWorkerQuantityField.text = ""
@@ -390,8 +393,8 @@ extension RequestsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerView.tag {
-        case 1:
-            return 1
+//        case 1:
+//            return 1
         case 2:
             return 1
         case 3:
@@ -413,8 +416,8 @@ extension RequestsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
-        case 1:
-            return location.count
+//        case 1:
+//            return location.count
         case 2:
             return shiftOneWorkerQuantity.count
         case 3:
@@ -436,8 +439,8 @@ extension RequestsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
-        case 1:
-            return location[row]
+//        case 1:
+//            return location[row]
         case 2:
             return shiftOneWorkerQuantity[row]
         case 3:
@@ -458,9 +461,9 @@ extension RequestsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
-        case 1:
-            locationField.text = location[row]
-            locationField.resignFirstResponder()
+//        case 1:
+//            locationField.text = location[row]
+//            locationField.resignFirstResponder()
         case 2:
             shiftOneWorkerQuantityField.text = shiftOneWorkerQuantity[row]
         case 3:

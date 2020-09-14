@@ -218,15 +218,18 @@ class RegisterViewController: UIViewController {
         lastNameField.resignFirstResponder()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
+        locationField.resignFirstResponder()
         
         guard let firstName = firstNameField.text,
             let lastName = lastNameField.text,
             let email = emailField.text,
             let password = passwordField.text,
+            let location = locationField.text,
             !firstName.isEmpty,
             !lastName.isEmpty,
             !email.isEmpty,
             !password.isEmpty,
+            !location.isEmpty,
             password.count >= 6 else {
                 alertUserLoginErro()
                 return
@@ -261,9 +264,11 @@ class RegisterViewController: UIViewController {
                 
                 UserDefaults.standard.setValue(email, forKey: "email")
                 UserDefaults.standard.setValue("\(firstName) \(lastName)", forKey: "name")
+                UserDefaults.standard.setValue(location, forKey: "location")
 
                 let chatUser = ChatAppUser(firstName: firstName,
                                            lastName: lastName,
+                                           userlocation: location,
                                            emailAddress: email)
                 DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
                     if success {

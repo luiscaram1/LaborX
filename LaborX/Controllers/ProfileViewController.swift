@@ -55,9 +55,14 @@ class ProfileViewController: UIViewController {
                                                         return
                                                     }
                                                     
+                                                    UserDefaults.standard.setValue(nil, forKey: "email")
+                                                    UserDefaults.standard.setValue(nil, forKey: "name")
+                                                    
                                                     do {
                                                         try FirebaseAuth.Auth.auth().signOut()
+                                                        
                                                         print("logout succesfull")
+                                                        
                                                         let vc = LoginViewController()
                                                         let nav = UINavigationController(rootViewController: vc)
                                                         nav.modalPresentationStyle = .fullScreen

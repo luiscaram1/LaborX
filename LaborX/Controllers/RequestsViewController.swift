@@ -55,7 +55,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     var shiftThreeNumHoursPicker = UIPickerView()
 
 
-    var location = ["Select Location", "Canton", "Chattanooga"]
+    var location = ["Select Location", "Tacoma", "Oxnard", "Los Angeles", "Jacksonville", "Brunswick", "Savannah", "Newport News", "Baltimore", "Elizabeth", "Grensgurg", "Lafayette", "Chattanooga", "Smyrna", "Canton", "Galveston"]
     var serviceType = ["Select Service Type", "Accesory", "PDI", "Drivers", "Port Modifications"]
     var shiftOneWorkerQuantity = ["# Workers","1","2","3","4","5","6","7","8","9","10"]
     var shiftOneHoursQuantity = ["# Hours","1","2","3","4","5","6","7","8","9","10"]
@@ -71,72 +71,11 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     var defaultShiftThreeWorkerQuantity = "0"
     var defaultShiftThreeNumHours = "0"
     
-    
-//    private let emailField: UITextField = {
-//               let field = UITextField()
-//               field.autocapitalizationType = .none
-//               field.autocorrectionType = .no
-//               field.returnKeyType = .continue
-//               field.layer.cornerRadius = 12
-//               field.layer.borderWidth = 1
-//               field.layer.borderColor = UIColor.lightGray.cgColor
-//               field.placeholder = "Email Address..."
-//               field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
-//               field.leftViewMode = .always
-//               field.backgroundColor = .secondarySystemBackground
-//               return field
-//           }()
-    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         validateAuth()
-            
-//        requestorsName.layer.borderColor = UIColor.blue.cgColor
-//        requestorsName.layer.borderWidth = 2
-//
-//        requestorsEmail.layer.borderColor = UIColor.blue.cgColor
-//        requestorsEmail.layer.borderWidth = 2
-//
-//        startField.layer.borderColor = UIColor.blue.cgColor
-//        startField.layer.borderWidth = 2
-//
-//        endDate.layer.borderColor = UIColor.blue.cgColor
-//        endDate.layer.borderWidth = 2
-//
-//        locationField.layer.borderColor = UIColor.blue.cgColor
-//        locationField.layer.borderWidth = 2
-//
-//        shiftOneHoursField.layer.borderColor = UIColor.blue.cgColor
-//        shiftOneHoursField.layer.borderWidth = 2
-//
-//        shiftOneStartField.layer.borderColor = UIColor.blue.cgColor
-//        shiftOneStartField.layer.borderWidth = 2
-//
-//        shiftOneWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
-//        shiftOneWorkerQuantityField.layer.borderWidth = 2
-//
-//        shiftTwoHoursField.layer.borderColor = UIColor.blue.cgColor
-//        shiftTwoHoursField.layer.borderWidth = 2
-//
-//        shiftTwoStartField.layer.borderColor = UIColor.blue.cgColor
-//        shiftTwoStartField.layer.borderWidth = 2
-//
-//        shiftTwoWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
-//        shiftTwoWorkerQuantityField.layer.borderWidth = 2
-//
-//        shiftThreeHoursField.layer.borderColor = UIColor.blue.cgColor
-//        shiftThreeHoursField.layer.borderWidth = 2
-//
-//        shiftThreeStartField.layer.borderColor = UIColor.blue.cgColor
-//        shiftThreeStartField.layer.borderWidth = 2
-//
-//        shiftThreeWorkerQuantityField.layer.borderColor = UIColor.blue.cgColor
-//        shiftThreeWorkerQuantityField.layer.borderWidth = 2
-//
-//        typeOfServiceField.layer.borderColor = UIColor.blue.cgColor
-//        typeOfServiceField.layer.borderWidth = 2
         
         formatSubmitButton.layer.cornerRadius = 12
         formatSubmitButton.layer.backgroundColor = UIColor.orange.cgColor

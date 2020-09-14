@@ -16,6 +16,10 @@ class RegisterViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
     
+    var locationPickerView = UIPickerView()
+    
+    var location = ["Select Location", "Tacoma", "Oxnard", "Los Angeles", "Jacksonville", "Brunswick", "Savannah", "Newport News", "Baltimore", "Elizabeth", "Grensgurg", "Lafayette", "Chattanooga", "Smyrna", "Canton", "Galveston"]
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.clipsToBounds = true
@@ -95,6 +99,21 @@ class RegisterViewController: UIViewController {
         return field
     }()
     
+    private let locationField: UITextField = {
+        let field = UITextField()
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
+        field.returnKeyType = .done
+        field.layer.cornerRadius = 12
+        field.layer.borderWidth = 1
+        field.layer.borderColor = UIColor.lightGray.cgColor
+        field.placeholder = "Location..."
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+        field.leftViewMode = .always
+        field.backgroundColor = .secondarySystemBackground
+        return field
+    }()
+    
     private let registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Register", for: .normal)
@@ -122,6 +141,8 @@ class RegisterViewController: UIViewController {
         
         emailField.delegate = self
         passwordField.delegate = self
+        locationPickerView.delegate = self
+        locationPickerView.dataSource = self
         
         // Add Subviews
         view.addSubview(scrollView)
@@ -130,7 +151,12 @@ class RegisterViewController: UIViewController {
         scrollView.addSubview(passwordField)
         scrollView.addSubview(emailField)
         scrollView.addSubview(firstNameField)
+        scrollView.addSubview(locationField)
         scrollView.addSubview(registerButton)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RequestsViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        locationField.inputView = locationPickerView
         
         imageview.isUserInteractionEnabled = true
         scrollView.isUserInteractionEnabled = true
@@ -174,8 +200,13 @@ class RegisterViewController: UIViewController {
                                      width: scrollView.width-60,
                                      height: 52)
         
+        locationField.frame = CGRect(x: 30,
+                                     y: passwordField.button+10,
+                                     width: scrollView.width-60,
+                                     height: 52)
+        
         registerButton.frame = CGRect(x: 30,
-                                      y: passwordField.button+10,
+                                      y: locationField.button+10,
                                       width: scrollView.width-60,
                                       height: 52)
         
@@ -227,6 +258,10 @@ class RegisterViewController: UIViewController {
                     print("Error creating user")
                     return
                 }
+                
+                UserDefaults.standard.setValue(email, forKey: "email")
+                UserDefaults.standard.setValue("\(firstName) \(lastName)", forKey: "name")
+
                 let chatUser = ChatAppUser(firstName: firstName,
                                            lastName: lastName,
                                            emailAddress: email)
@@ -347,4 +382,34 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         
     }
 
+
+extension RegisterViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return location.count
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return location[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        locationField.text = location[row]
+        locationField.resignFirstResponder()
+        
+        return
+        
+    }
+
+    
+   
+    
+}
     

@@ -1,4 +1,6 @@
 PODS:
+  - Firebase/Analytics (6.31.0):
+    - Firebase/Core
   - Firebase/Auth (6.31.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.0)
@@ -7,6 +9,9 @@ PODS:
     - FirebaseAnalytics (= 6.8.0)
   - Firebase/CoreOnly (6.31.0):
     - FirebaseCore (= 6.10.1)
+  - Firebase/Crashlytics (6.31.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.5.0)
   - Firebase/Database (6.31.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.5.0)
@@ -36,6 +41,12 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
     - nanopb (~> 1.30906.0)
+  - FirebaseCrashlytics (4.5.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleDataTransport (~> 7.2)
+    - nanopb (~> 1.30906.0)
+    - PromisesObjC (~> 1.2)
   - FirebaseDatabase (6.5.0):
     - FirebaseCore (~> 6.10)
     - leveldb-library (~> 1.22)
@@ -98,8 +109,10 @@ PODS:
   - SDWebImage/Core (5.9.0)
 
 DEPENDENCIES:
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Crashlytics
   - Firebase/Database
   - Firebase/Storage
   - JGProgressHUD
@@ -114,6 +127,7 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseCrashlytics
     - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseStorage
@@ -137,6 +151,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: 09f086fae98643f1ef235674cf3ae171ce26f5ba
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
+  FirebaseCrashlytics: d2a350ec7fd4a332031b906b0802a7a73697630b
   FirebaseDatabase: d85b47213273708e48c972012b39105f76229588
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseStorage: 33b92875a9b556824886cc7a65120c7d2cb3a8d8
@@ -154,6 +169,6 @@ SPEC CHECKSUMS:
   RealmSwift: a6ea2ea561039fc3833c08dec81371a9a3bb5ca6
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
 
-PODFILE CHECKSUM: 5e36c4a0c698cd413ce4bc580dded30718890860
+PODFILE CHECKSUM: 9cbe4ed58add5d302696494469df30803a3f64ba
 
 COCOAPODS: 1.9.3

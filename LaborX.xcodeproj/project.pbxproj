@@ -14,7 +14,6 @@
 		C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */; };
 		C82E2C6724FB4D4E006CFDED /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */; };
 		C85240152510048F008B6010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85240142510048F008B6010 /* Main.storyboard */; };
-		C852401725101AF4008B6010 /* getRequestHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852401625101AF4008B6010 /* getRequestHistoryManager.swift */; };
 		C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */; };
 		C874A88B2509EF8200767D1E /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874A88A2509EF8200767D1E /* NewConversationCell.swift */; };
 		C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8969A2225028DD6008139A3 /* GoogleService-Info.plist */; };
@@ -45,7 +44,6 @@
 		C82E2C6224FB201D006CFDED /* ActiveUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewController.swift; sourceTree = "<group>"; };
 		C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C85240142510048F008B6010 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C852401625101AF4008B6010 /* getRequestHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRequestHistoryManager.swift; sourceTree = "<group>"; };
 		C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		C874A88A2509EF8200767D1E /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		C8969A2225028DD6008139A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				C8A49D5024FAC3DF0089445C /* Extensions.swift */,
 				C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */,
 				C8BFF5A52505701E008D9DF5 /* StorageManager.swift */,
-				C852401625101AF4008B6010 /* getRequestHistoryManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				C8A49D5124FAC3DF0089445C /* Extensions.swift in Sources */,
 				C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */,
 				C8DA3BCB24F882C40000B009 /* AppDelegate.swift in Sources */,
-				C852401725101AF4008B6010 /* getRequestHistoryManager.swift in Sources */,
 				C816F840250C08B1004DAE23 /* LocationPickerViewController.swift in Sources */,
 				C8A49D4E24FAB9840089445C /* ProfileViewController.swift in Sources */,
 				C8DA3BCD24F882C40000B009 /* SceneDelegate.swift in Sources */,
@@ -475,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 95FF59SP27;
+				DEVELOPMENT_TEAM = R7J4R6V7AT;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -483,7 +479,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,7 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 95FF59SP27;
+				DEVELOPMENT_TEAM = R7J4R6V7AT;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

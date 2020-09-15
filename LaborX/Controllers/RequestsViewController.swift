@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseFirestore
 
 class RequestsViewController: UIViewController, UITextFieldDelegate {
     
@@ -308,62 +309,80 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         {
             
             //create that array
-           
-            self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
-                        if var usersCollection = snapshot.value as? [[String: String]] {
-                            //append to user dictionary
-                            let newCollection: [[String: String]] = [
-                                [
-                                    "startdate": self.startField.text!,
-                                    "enddate": self.endDate.text!,
-                                    "ServiceType": self.typeOfServiceField.text!,
-                                    "shiftOneStartTime": self.shiftOneStartField.text!,
-                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
-                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
-                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
-                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
-                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
-                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
-                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
-                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
-                                    "twic": self.twicLbl.text!,
-                                    "piece": self.pieceLbl.text!,
-                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "No Email")",
-                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
-                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "No Location")"
-                                ]
-                            ]
-                            usersCollection.append(contentsOf: newCollection)
-
-                            self.database.child("Requests").setValue(usersCollection)
-
-                        }
-                        else {
-                            //create that array
-                            let usersCollection: [[String: String]] = [
-                                [
-                                    "startdate": self.startField.text!,
-                                    "enddate": self.endDate.text!,
-                                    "ServiceType": self.typeOfServiceField.text!,
-                                    "shiftOneStartTime": self.shiftOneStartField.text!,
-                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
-                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
-                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
-                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
-                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
-                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
-                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
-                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
-                                    "twic": self.twicLbl.text!,
-                                    "Piece": self.pieceLbl.text!,
-                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "Email")",
-                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "Name")",
-                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "Location")"
-                                ]
-                            ]
-                            
-                            self.database.child("Requests").setValue(usersCollection)
-               }
+            Firestore.firestore().collection("Requests").document("request # \(startField.text!)").setData([
+                "startdate": self.startField.text!,
+                "enddate": self.endDate.text!,
+                "ServiceType": self.typeOfServiceField.text!,
+                "shiftOneStartTime": self.shiftOneStartField.text!,
+                "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+                "shiftOneNumHours": self.shiftOneHoursField.text!,
+                "shiftTwoStartTime": self.shiftTwoStartField.text!,
+                "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+                "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+                "shiftThreeStartTime": self.shiftThreeStartField.text!,
+                "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+                "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+                "twic": self.twicLbl.text!,
+                "piece": self.pieceLbl.text!,
+                "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "No Email")",
+                "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
+                "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "No Location")"
+            ])
+//            self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
+//                        if var usersCollection = snapshot.value as? [[String: String]] {
+//                            //append to user dictionary
+//                            let newCollection: [[String: String]] = [
+//                                [
+//                                    "startdate": self.startField.text!,
+//                                    "enddate": self.endDate.text!,
+//                                    "ServiceType": self.typeOfServiceField.text!,
+//                                    "shiftOneStartTime": self.shiftOneStartField.text!,
+//                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+//                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
+//                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
+//                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+//                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+//                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
+//                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+//                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+//                                    "twic": self.twicLbl.text!,
+//                                    "piece": self.pieceLbl.text!,
+//                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "No Email")",
+//                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
+//                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "No Location")"
+//                                ]
+//                            ]
+//                            usersCollection.append(contentsOf: newCollection)
+//
+//                            self.database.child("Requests").setValue(usersCollection)
+//
+//                        }
+//                        else {
+//                            //create that array
+//                            let usersCollection: [[String: String]] = [
+//                                [
+//                                    "startdate": self.startField.text!,
+//                                    "enddate": self.endDate.text!,
+//                                    "ServiceType": self.typeOfServiceField.text!,
+//                                    "shiftOneStartTime": self.shiftOneStartField.text!,
+//                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+//                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
+//                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
+//                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+//                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+//                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
+//                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+//                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+//                                    "twic": self.twicLbl.text!,
+//                                    "Piece": self.pieceLbl.text!,
+//                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "Email")",
+//                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "Name")",
+//                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "Location")"
+//                                ]
+//                            ]
+//
+//                            self.database.child("Requests").setValue(usersCollection)
+//               }
                 
                 self.typeOfServiceField.text = self.defaultServiceType
                 self.shiftOneStartField.text! = ""
@@ -392,7 +411,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 
                 
      
-            })
+            //})
         }
          
     }

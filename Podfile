@@ -15,7 +15,7 @@ pod 'MessageKit'
 pod 'JGProgressHUD'
 pod 'RealmSwift'
 pod 'SDWebImage'
-
+pod 'Firebase/Firestore'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Analytics'
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 
 @UIApplicationMain
@@ -21,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //accesing firebase, had to add import firebasecore
         
         FirebaseApp.configure()
-        
         return true
+        
     }
 
     // MARK: UISceneSession Lifecycle

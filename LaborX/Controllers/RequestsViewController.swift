@@ -19,7 +19,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 //    @IBOutlet weak var requestorsEmail: UITextField!
     @IBOutlet weak var startField: UITextField!
     @IBOutlet weak var endDate: UITextField!
-    @IBOutlet weak var locationField: UITextField!
+//    @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var shiftOneHoursField: UITextField!
     @IBOutlet weak var shiftOneStartField: UITextField!
     @IBOutlet weak var shiftOneWorkerQuantityField: UITextField!
@@ -30,7 +30,9 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shiftThreeHoursField: UITextField!
     @IBOutlet weak var shiftThreeStartField: UITextField!
     @IBOutlet weak var twicSwitch: UISwitch!
+    @IBOutlet weak var pieceSwitch: UISwitch!
     @IBOutlet weak var twicLbl: UILabel!
+    @IBOutlet weak var pieceLbl: UILabel!
     @IBOutlet weak var typeOfServiceField: UITextField!
     @IBOutlet weak var formatSubmitButton: UIButton!
     
@@ -74,6 +76,10 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       
+            
         
         validateAuth()
         
@@ -122,7 +128,6 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             shiftTwoStartField.inputView = shiftTwoTimePicker
             shiftThreeStartField.inputView = shiftThreeTimePicker
             
-//            locationField.inputView = locationPickerView
             typeOfServiceField.inputView = serviceTypePicker
             shiftOneWorkerQuantityField.inputView = shiftOneWorkerQuantityPicker
             shiftOneHoursField.inputView = shiftOneNumHoursPicker
@@ -131,7 +136,6 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             shiftThreeWorkerQuantityField.inputView = shiftThreeWorkerQuantityPicker
             shiftThreeHoursField.inputView = shiftThreeNumHoursPicker
         
-//            locationField.text = defaultLocation
             typeOfServiceField.text = defaultServiceType
         
             locationPickerView.delegate = self
@@ -152,6 +156,11 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             shiftThreeNumHoursPicker.delegate = self
             shiftThreeWorkerQuantityPicker.dataSource = self
             shiftThreeWorkerQuantityPicker.delegate = self
+        
+        
+            shiftOneStartField.text = "07:00 am"
+            shiftTwoStartField.text = "07:00 am"
+            shiftThreeStartField.text = "07:00 am"
             
                 
             locationPickerView.tag = 1
@@ -175,8 +184,23 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
         endDate.text = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
         view.endEditing(true)
+        
+        
+        let timerFormatter = DateFormatter()
+        timerFormatter.dateFormat =  "HH:mm"
+        let timeOne = timerFormatter.date(from: "07:00")
+        shiftOneTimePicker?.date = timeOne!
+        
 
-
+        timerFormatter.dateFormat =  "HH:mm"
+        let timeTwo = timerFormatter.date(from: "07:00")
+        shiftTwoTimePicker?.date = timeTwo!
+        
+       
+        timerFormatter.dateFormat =  "HH:mm"
+        let timeThree = timerFormatter.date(from: "07:00")
+        shiftThreeTimePicker?.date = timeThree!
+        
     }
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
@@ -184,16 +208,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 //      validateAuth()
 //    }
 //    
-//    private func validateAuth(){
-//        
-//        if FirebaseAuth.Auth.auth().currentUser == nil {
-//            let vc = LoginViewController()
-//            let nav = UINavigationController(rootViewController: vc)
-//            nav.modalPresentationStyle = .fullScreen
-//            present(nav, animated: false)
-//        }
-//        
-//    }
+
     
     private func validateAuth(){
 
@@ -211,16 +226,29 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         let onState = twicSwitch.isOn
         
         if onState {
-                twicLbl.text = "YES"
+                twicLbl.text = "TWIC YES"
             }
             else {
-                twicLbl.text = "NO"
+                twicLbl.text = "TWIC NO"
             }
         }
 
+    @IBAction func actionPieceTriggered(_ sender: Any) {
+        
+        let onState = pieceSwitch.isOn
+        
+        if onState {
+                pieceLbl.text = "Piece YES"
+            }
+            else {
+                pieceLbl.text = "Piece NO"
+            }
+        }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
+        
+        
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
@@ -259,25 +287,16 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         //Upload Files
     }
     
+   struct ProfileViewModel {
+        let viewModelType: ProfileViewModelType
+        let title: String
+        let handler: (() -> Void)?
+    }
+
+    
     @IBAction func submitRequest(_ sender: Any) {
-        print("tapped")        
-//        if(locationField.text == "Select Location" && requestorsName.text == "" || requestorsEmail.text == "") {
-//            let alert = UIAlertController(title: "Some Fields are missing", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-//            // add an action (button)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        else
-        
-//        if(locationField.text == "Select Location") {
-//            let alert = UIAlertController(title: "Please Select Location", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-//            // add an action (button)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//        }
-            //else
+        print("tapped")
+
         if(typeOfServiceField.text == "Select Service Type") {
                 let alert = UIAlertController(title: "Please Select Service", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
                 // add an action (button)
@@ -285,47 +304,35 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
             }
-//        else if(requestorsName.text == "") {
-//            let alert = UIAlertController(title: "Missing Requestors Name", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-//            // add an action (button)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        else if(requestorsEmail.text == "") {
-//            let alert = UIAlertController(title: "Missing Requestors Email", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
-//            // add an action (button)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//        }
         else
         {
             
             //create that array
            
-            
             self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
                         if var usersCollection = snapshot.value as? [[String: String]] {
                             //append to user dictionary
-                             let newCollection: [[String: String]] = [
-//                                ["name": self.requestorsName.text!,
-//                                 "email": self.requestorsEmail.text!,
-                                 ["startdate": self.startField.text!,
-                                 "enddate": self.endDate.text!,
-//                                 "location": self.locationField.text!,
-                                 "ServiceType": self.typeOfServiceField.text!,
-                                 "shiftOneStartTime": self.shiftOneStartField.text!,
-                                 "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
-                                 "shiftOneNumHours": self.shiftOneHoursField.text!,
-                                 "shiftTwoStartTime": self.shiftTwoStartField.text!,
-                                 "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
-                                 "shiftTwoNumHours": self.shiftTwoHoursField.text!,
-                                 "shiftThreeStartTime": self.shiftThreeStartField.text!,
-                                 "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
-                                 "shiftThreeNumHours": self.shiftThreeHoursField.text!,
-                                 "twic": self.twicLbl.text!]
-                                           ]
+                            let newCollection: [[String: String]] = [
+                                [
+                                    "startdate": self.startField.text!,
+                                    "enddate": self.endDate.text!,
+                                    "ServiceType": self.typeOfServiceField.text!,
+                                    "shiftOneStartTime": self.shiftOneStartField.text!,
+                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
+                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
+                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
+                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+                                    "twic": self.twicLbl.text!,
+                                    "piece": self.pieceLbl.text!,
+                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "No Email")",
+                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
+                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "No Location")"
+                                ]
+                            ]
                             usersCollection.append(contentsOf: newCollection)
 
                             self.database.child("Requests").setValue(usersCollection)
@@ -334,30 +341,30 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                         else {
                             //create that array
                             let usersCollection: [[String: String]] = [
-//                                ["name": self.requestorsName.text!,
-//                                "email": self.requestorsEmail.text!,
-                                ["startdate": self.startField.text!,
-                                "enddate": self.endDate.text!,
-//                                "location": self.locationField.text!,
-                                "ServiceType": self.typeOfServiceField.text!,
-                                "shiftOneStartTime": self.shiftOneStartField.text!,
-                                "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
-                                "shiftOneNumHours": self.shiftOneHoursField.text!,
-                                "shiftTwoStartTime": self.shiftTwoStartField.text!,
-                                "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
-                                "shiftTwoNumHours": self.shiftTwoHoursField.text!,
-                                "shiftThreeStartTime": self.shiftThreeStartField.text!,
-                                "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
-                                "shiftThreeNumHours": self.shiftThreeHoursField.text!,
-                                "twic": self.twicLbl.text!]
+                                [
+                                    "startdate": self.startField.text!,
+                                    "enddate": self.endDate.text!,
+                                    "ServiceType": self.typeOfServiceField.text!,
+                                    "shiftOneStartTime": self.shiftOneStartField.text!,
+                                    "shiftOneQuantityWorkers": self.shiftOneWorkerQuantityField.text!,
+                                    "shiftOneNumHours": self.shiftOneHoursField.text!,
+                                    "shiftTwoStartTime": self.shiftTwoStartField.text!,
+                                    "shiftTwoQuantityWorkers": self.shiftTwoWorkerQuantityField.text!,
+                                    "shiftTwoNumHours": self.shiftTwoHoursField.text!,
+                                    "shiftThreeStartTime": self.shiftThreeStartField.text!,
+                                    "shiftThreeQuantityWorkers": self.shiftThreeWorkerQuantityField.text!,
+                                    "shiftThreeNumHours": self.shiftThreeHoursField.text!,
+                                    "twic": self.twicLbl.text!,
+                                    "Piece": self.pieceLbl.text!,
+                                    "requestorEmail": "\(UserDefaults.standard.value(forKey: "email") as? String ?? "Email")",
+                                    "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "Name")",
+                                    "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "Location")"
+                                ]
                             ]
                             
                             self.database.child("Requests").setValue(usersCollection)
                }
                 
-//                self.requestorsName.text! = ""
-//                self.requestorsEmail.text! = ""
-//                self.locationField.text = self.defaultLocation
                 self.typeOfServiceField.text = self.defaultServiceType
                 self.shiftOneStartField.text! = ""
                 self.shiftOneWorkerQuantityField.text = ""
@@ -369,20 +376,23 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 self.shiftThreeWorkerQuantityField.text! = ""
                 self.shiftThreeHoursField.text! = ""
                 self.twicSwitch.isOn = false
+                self.pieceSwitch.isOn = false
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
                 self.startField.text = dateFormatter.string(from: Date())
                 self.view.endEditing(true)
-                
-
                 dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
                 self.endDate.text = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
                 self.view.endEditing(true)
+                
+                self.shiftOneStartField.text = "07:00 am"
+                self.shiftTwoStartField.text = "07:00 am"
+                self.shiftThreeStartField.text = "07:00 am"
+                
+                
+                
      
             })
-            
-           //self.navigationController?.dismiss(animated: true, completion: nil)
-           
         }
          
     }

@@ -10,6 +10,10 @@ import UIKit
 import FirebaseFirestore
 
 
+
+var requestIdentifier = ""
+    
+
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
@@ -27,7 +31,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
     
-
+        //get requests first document
         
                     requestsCollectionRef = Firestore.firestore().collection("Requests")
                     requestsCollectionRef.getDocuments() { ( QuerySnapshot, err) in
@@ -37,38 +41,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     else {
                         guard let snap = QuerySnapshot else {return}
                         for document in snap.documents {
-        //                    let data = document.data()
-        //                    let requestorsEmail = data["requestorsEmail"] as? String ?? "Anoymous"
-        //                    let requestorsName = data["requestorsName"] as? String ?? "Anoymous"
-        //                    let shiftOneNumHours = data["shiftOneNumHours"] as? String ?? "None"
-        //                    let shiftOneStartTime = data["shiftOneStartTime"] as? String ?? "Anoymous"
-        //                    let shiftOneQuantityWorkers = data["shiftOneQuantityWorkers"] as? String ?? "Anoymous"
-        //                    let shiftTwoNumHours = data["shiftTwoNumHours"] as? String ?? "None"
-        //                    let shiftTwoStartTime = data["shiftTwoStartTime"] as? String ?? "Anoymous"
-        //                    let shiftTwoQuantityWorkers = data["shiftTwoQuantityWorkers"] as? String ?? "Anoymous"
-        //                    let shiftThreeNumHours = data["shiftThreeNumHours"] as? String ?? "None"
-        //                    let shiftThreeStartTime = data["shiftThreeStartTime"] as? String ?? "Anoymous"
-        //                    let shiftThreeQuantityWorkers = data["shiftThreeQuantityWorkers"] as? String ?? "Anoymous"
-        //                    let startDate = data["startdate"] as? String ?? "Anoymous"
-        //                    let twic = data["twic"] as? String ?? "Anonymous"
-        //                    let piece = data["piece"] as? String ?? "Anonymous"
-        //                    let endDate = data["endate"] as? String ?? "Anonymous"
-        //                    let serviceType = data["serviceType"] as? String ?? "Anonymous"
-                            
-        //                    let newRequest = requests(requestorsEmail: "requestorsEmail", requestorsName: "requestorsName", shiftOneNumHours:"shiftOneNumHours",
-        //                    shiftOneStartTime:"shiftOneStartTime",
-        //                     shiftOneQuantityWorkers :"shiftOneQuantityWorkers",
-        //                    shiftTwoNumHours :"shiftTwoNumHours",
-        //                     shiftTwoStartTime :"shiftTwoStartTime",
-        //                     shiftTwoQuantityWorkers:"shiftTwoQuantityWorkers",
-        //                     shiftThreeNumHours:"shiftThreeNumHours",
-        //                     shiftThreeStartTime:"shiftThreeStartTime",
-        //                     shiftThreeQuantityWorkers:"shiftThreeQuantityWorkers",
-        //                     startDate:"startdate",
-        //                     twic:"twic",
-        //                     piece:"piece",
-        //                     endDate :"endate",
-        //                     serviceType:"serviceType")
                             
                             self.requests.append(document.documentID)
                             print("\(document.documentID)")
@@ -93,5 +65,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
        }
     
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "reqDetailsSegue", sender: self)
+            requestIdentifier = requests[indexPath.row]
+        }
+        
+    }
+
 

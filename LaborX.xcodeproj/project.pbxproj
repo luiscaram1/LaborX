@@ -17,7 +17,7 @@
 		C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */; };
 		C874A88B2509EF8200767D1E /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874A88A2509EF8200767D1E /* NewConversationCell.swift */; };
 		C878059A2511DD4400EE418A /* requestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87805992511DD4400EE418A /* requestList.swift */; };
-		C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8969A2225028DD6008139A3 /* GoogleService-Info.plist */; };
+		C879855325126DBE00742279 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C879855225126DBE00742279 /* GoogleService-Info.plist */; };
 		C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4324FAB8DA0089445C /* LoginViewController.swift */; };
 		C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */; };
 		C8A49D4824FAB9180089445C /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4724FAB9180089445C /* PhotoViewerViewController.swift */; };
@@ -40,6 +40,7 @@
 		37794A551E78A3ED560AE591 /* Pods_LaborX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaborX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
 		B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.release.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.release.xcconfig"; sourceTree = "<group>"; };
+		C803D5582512974000523737 /* LaborX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaborX.entitlements; sourceTree = "<group>"; };
 		C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,7 @@
 		C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		C874A88A2509EF8200767D1E /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		C87805992511DD4400EE418A /* requestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestList.swift; sourceTree = "<group>"; };
-		C8969A2225028DD6008139A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C879855225126DBE00742279 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8A49D4324FAB8DA0089445C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C8A49D4724FAB9180089445C /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +179,7 @@
 		C8DA3BBE24F882C40000B009 = {
 			isa = PBXGroup;
 			children = (
-				C8969A2225028DD6008139A3 /* GoogleService-Info.plist */,
+				C879855225126DBE00742279 /* GoogleService-Info.plist */,
 				C8DA3BC924F882C40000B009 /* LaborX */,
 				C8DA3BC824F882C40000B009 /* Products */,
 				6188F78DA8F6C22C052BDB28 /* Pods */,
@@ -197,6 +198,7 @@
 		C8DA3BC924F882C40000B009 /* LaborX */ = {
 			isa = PBXGroup;
 			children = (
+				C803D5582512974000523737 /* LaborX.entitlements */,
 				C8A49D4124FAB77B0089445C /* Resources */,
 				C8A49D4024FAB7690089445C /* ViewModels */,
 				C8A49D3F24FAB75B0089445C /* Models */,
@@ -268,8 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DA3BD724F882C50000B009 /* LaunchScreen.storyboard in Resources */,
+				C879855325126DBE00742279 /* GoogleService-Info.plist in Resources */,
 				C8DA3BD424F882C50000B009 /* Assets.xcassets in Resources */,
-				C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */,
 				C85240152510048F008B6010 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,20 +483,21 @@
 			baseConfigurationReference = 45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaborX/LaborX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R7J4R6V7AT;
+				DEVELOPMENT_TEAM = ACX9F72932;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.laborxclient.LaborX;
 				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,20 +506,21 @@
 			baseConfigurationReference = B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaborX/LaborX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R7J4R6V7AT;
+				DEVELOPMENT_TEAM = ACX9F72932;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.legacytechnologygroup.LaborX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.laborxclient.LaborX;
 				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

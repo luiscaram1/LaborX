@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>14913749633-s7j1ifpkpc5prbs5qu1hhhfon4uku1qe.apps.googleusercontent.com</string>
+	<string>574447689037-2l0t5acibk830c03dji53gana7dk5aop.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.14913749633-s7j1ifpkpc5prbs5qu1hhhfon4uku1qe</string>
+	<string>com.googleusercontent.apps.574447689037-2l0t5acibk830c03dji53gana7dk5aop</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC3joXAt1caWXAvtFfahHNrTV3yjVZclNs</string>
+	<string>AIzaSyB7N2Nb6Nqg6yzi1zXvZ3_UfYVagF8RhTc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>14913749633</string>
+	<string>574447689037</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.legacytechnologygroup.LaborX</string>
+	<string>com.laborxclient.LaborX</string>
 	<key>PROJECT_ID</key>
-	<string>labor-78e70</string>
+	<string>laborx-60ecd</string>
 	<key>STORAGE_BUCKET</key>
-	<string>labor-78e70.appspot.com</string>
+	<string>laborx-60ecd.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:14913749633:ios:24c015433eaeadcb750380</string>
+	<string>1:574447689037:ios:fdf19f01c1f9841b2fab04</string>
 	<key>DATABASE_URL</key>
-	<string>https://labor-78e70.firebaseio.com</string>
+	<string>https://laborx-60ecd.firebaseio.com</string>
 </dict>
 </plist>

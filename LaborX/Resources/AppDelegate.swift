@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+//import FirebaseCore
+//import FirebaseMessaging
 
 
 @UIApplicationMain

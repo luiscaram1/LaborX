@@ -83,7 +83,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         
         
         print("\(String(describing: UserDefaults.standard.value(forKey: "location")))")
-        employeeLocation = UserDefaults.standard.value(forKey: "location") as! String
+        employeeLocation = String(describing: UserDefaults.standard.value(forKey: "location"))
+        
         
         validateAuth()
         

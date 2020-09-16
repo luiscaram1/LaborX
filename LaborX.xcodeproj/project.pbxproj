@@ -16,6 +16,7 @@
 		C85240152510048F008B6010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85240142510048F008B6010 /* Main.storyboard */; };
 		C8745ADA2508641A0086F147 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */; };
 		C874A88B2509EF8200767D1E /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874A88A2509EF8200767D1E /* NewConversationCell.swift */; };
+		C878059A2511DD4400EE418A /* requestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87805992511DD4400EE418A /* requestList.swift */; };
 		C8969A2325028DD6008139A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8969A2225028DD6008139A3 /* GoogleService-Info.plist */; };
 		C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4324FAB8DA0089445C /* LoginViewController.swift */; };
 		C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */; };
@@ -31,6 +32,7 @@
 		C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DA3BCE24F882C40000B009 /* ConversationsViewController.swift */; };
 		C8DA3BD424F882C50000B009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DA3BD324F882C50000B009 /* Assets.xcassets */; };
 		C8DA3BD724F882C50000B009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DA3BD524F882C50000B009 /* LaunchScreen.storyboard */; };
+		C8F134AB251234610043AC06 /* employeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F134AA251234610043AC06 /* employeeList.swift */; };
 		FFB55B2359CDE8267C38DC5E /* Pods_LaborX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37794A551E78A3ED560AE591 /* Pods_LaborX.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,7 @@
 		C85240142510048F008B6010 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C8745AD92508641A0086F147 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		C874A88A2509EF8200767D1E /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
+		C87805992511DD4400EE418A /* requestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestList.swift; sourceTree = "<group>"; };
 		C8969A2225028DD6008139A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8A49D4324FAB8DA0089445C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C8A49D4524FAB8EB0089445C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		C8DA3BD324F882C50000B009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8DA3BD624F882C50000B009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8DA3BD824F882C50000B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8F134AA251234610043AC06 /* employeeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeeList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				C82E2C6624FB4D4E006CFDED /* ChatViewController.swift */,
 				C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */,
 				C8AB10952511378D00FFBA43 /* RequestDetailViewController.swift */,
+				C87805992511DD4400EE418A /* requestList.swift */,
+				C8F134AA251234610043AC06 /* employeeList.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,8 +325,10 @@
 			files = (
 				C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */,
 				C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */,
+				C878059A2511DD4400EE418A /* requestList.swift in Sources */,
 				C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */,
 				C8A49D4A24FAB92E0089445C /* VideoPlayerViewController.swift in Sources */,
+				C8F134AB251234610043AC06 /* employeeList.swift in Sources */,
 				C8A49D4C24FAB96F0089445C /* NewConversationViewController.swift in Sources */,
 				C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */,
 				C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */,

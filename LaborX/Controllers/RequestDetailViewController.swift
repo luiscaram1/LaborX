@@ -40,6 +40,7 @@ class RequestDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Request Details"
         
     }
     
@@ -61,13 +62,13 @@ class RequestDetailViewController: UIViewController {
                     self.location.text = document["location"] as? String ?? "Anoymous"
                     self.serviceType.text = document["ServiceType"] as? String ?? "Anonymous"
                     self.shiftOneHours.text = document["shiftOneNumHours"] as? String ?? "Anonymous"
-                    self.shiftOneWorkers.text = document["shiftOneWorkers"] as? String ?? "Anonymous"
+                    self.shiftOneWorkers.text = document["shiftOneQuantityWorkers"] as? String ?? "Anonymous"
                     self.shiftOneStartTime.text = document["shiftOneStartTime"] as? String ?? "Anonymous"
-                    self.shiftTwoHours.text = document["shiftTwoHours"] as? String ?? "Anonymous"
-                    self.shiftTwoWorkers.text = document["shiftTwoWorkers"] as? String ?? "Anonymous"
+                    self.shiftTwoHours.text = document["shiftTwoNumHours"] as? String ?? "Anonymous"
+                    self.shiftTwoWorkers.text = document["shiftTwoQuantityWorkers"] as? String ?? "Anonymous"
                     self.shiftTwoStartTime.text = document["shiftTwoStartTime"] as? String ?? "Anonymous"
-                    self.shiftThreeHours.text = document["shiftThreeHours"] as? String ?? "Anonymous"
-                    self.shiftThreeWorkers.text = document["shiftThreeWorkers"] as? String ?? "Anonymous"
+                    self.shiftThreeHours.text = document["shiftThreeNumHours"] as? String ?? "Anonymous"
+                    self.shiftThreeWorkers.text = document["shiftThreeQuantityWorkers"] as? String ?? "Anonymous"
                     self.shiftThreeStartTime.text = document["shiftThreeStartTime"] as? String ?? "Anonymous"
                     self.twic.text = document["twic"] as? String ?? "Anonymous"
                     self.piece.text = document["piece"] as? String ?? "Anonymous"

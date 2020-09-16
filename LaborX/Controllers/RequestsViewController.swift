@@ -13,10 +13,10 @@ import FirebaseFirestore
 
 
 
-
+var employeeLocation = ""
 class RequestsViewController: UIViewController, UITextFieldDelegate {
     
-
+    var currentDateTime = ""
     private let database  = Database.database().reference()
     
 //    @IBOutlet weak var requestorsName: UITextField!
@@ -62,7 +62,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 
 
 //    var location = ["Select Location", "Tacoma", "Oxnard", "Los Angeles", "Jacksonville", "Brunswick", "Savannah", "Newport News", "Baltimore", "Elizabeth", "Grensgurg", "Lafayette", "Chattanooga", "Smyrna", "Canton", "Galveston"]
-    var serviceType = ["Select Service Type", "Accesory", "PDI", "Drivers", "Port Modifications"]
+    var serviceType = ["Select Service Type", "Accessory", "PDI", "Drivers", "Port Modifications"]
     var shiftOneWorkerQuantity = ["# Workers","1","2","3","4","5","6","7","8","9","10"]
     var shiftOneHoursQuantity = ["# Hours","1","2","3","4","5","6","7","8","9","10"]
     var shiftTwoWorkerQuantity = ["# Workers","1","2","3","4","5","6","7","8","9","10"]
@@ -82,8 +82,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
-       
-            
+        print("\(String(describing: UserDefaults.standard.value(forKey: "location")))")
+        employeeLocation = UserDefaults.standard.value(forKey: "location") as! String
         
         validateAuth()
         
@@ -177,6 +177,12 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             serviceTypePicker.tag = 8
             
         
+        
+        
+        let currentDT = DateFormatter()
+        currentDT.dateFormat = "MM-dd-yyyy'T'HH:mm:ss"
+        currentDateTime = currentDT.string(from: Date())
+        view.endEditing(true)
         
         
         let dateFormatter = DateFormatter()
@@ -312,7 +318,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         {
             
             //create that array
-            Firestore.firestore().collection("Requests").document("request # \(startField.text!)").setData([
+            Firestore.firestore().collection("Requests").document("\(currentDateTime)_\(startField.text!)").setData([
                 "startdate": self.startField.text!,
                 "enddate": self.endDate.text!,
                 "ServiceType": self.typeOfServiceField.text!,
@@ -331,6 +337,11 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 "requestorName": "\(UserDefaults.standard.value(forKey: "name") as? String ?? "No Name")",
                 "location": "\(UserDefaults.standard.value(forKey: "location") as? String ?? "No Location")"
             ])
+            
+            
+            
+            
+            
 //            self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
 //                        if var usersCollection = snapshot.value as? [[String: String]] {
 //                            //append to user dictionary
@@ -412,7 +423,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 self.shiftThreeStartField.text = "07:00 am"
                 
                 
-                
+            
      
             //})
         }

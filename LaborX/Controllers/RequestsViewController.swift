@@ -10,9 +10,11 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseFirestore
+import MessageKit
+import Firebase
 
 
-
+var sum = Int()
 var employeeLocation = ""
 class RequestsViewController: UIViewController, UITextFieldDelegate {
     
@@ -81,7 +83,28 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.displayFCMToken(notification:)),
+        name: Notification.Name("FCMToken"), object: nil)
         
+//        let token = Messaging.messaging().fcmToken
+//           print("FCM token: \(token ?? "")")
+//           // [END log_fcm_reg_token]
+
+           // [START log_iid_reg_token]
+           InstanceID.instanceID().instanceID { (result, error) in
+             if let error = error {
+               print("Error fetching remote instance ID: \(error)")
+             } else if let result = result {
+               print("Remote instance ID token: \(result.token)")
+              //hi self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
+             }
+           }
+        
+        // [START subscribe_topic]
+//        Messaging.messaging().subscribe(toTopic: "weather") { error in
+//          print("Subscribed to weather topic")
+//        }
+        // [END subscribe_topic]
         print("\(String(describing: UserDefaults.standard.value(forKey: "location")))")
         employeeLocation = String(describing: UserDefaults.standard.value(forKey: "location"))
         
@@ -220,6 +243,12 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
 //    }
 //    
 
+    @objc func displayFCMToken(notification: NSNotification){
+      guard let userInfo = notification.userInfo else {return}
+      if let fcmToken = userInfo["token"] as? String {
+        print("Received FCM token: \(fcmToken)")
+      }
+    }
     
     private func validateAuth(){
 
@@ -231,6 +260,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    
+
     
     @IBAction func actionTwicTriggered(_ sender: Any) {
         
@@ -340,7 +371,20 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             ])
             
             
+            let num1 = Int(shiftOneWorkerQuantityField.text!)
+            print(" The number One is\(num1 ?? 0)")
             
+            let num2 = Int(shiftTwoWorkerQuantityField.text!)
+            print(" The number One is\(num2 ?? 0)")
+            
+            let num3 = Int(shiftTwoWorkerQuantityField.text!)
+            print(" The number One is\(num3 ?? 0)")
+            
+            sum = num1! + num2! + num3!
+            print(sum)
+           
+
+          
             
             
 //            self.database.child("Requests").observeSingleEvent(of: .value, with: { snapshot in
@@ -422,9 +466,12 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                 self.shiftOneStartField.text = "07:00 am"
                 self.shiftTwoStartField.text = "07:00 am"
                 self.shiftThreeStartField.text = "07:00 am"
+            
+                
                 
                 
             
+
      
             //})
         }

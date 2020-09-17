@@ -118,6 +118,10 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.displayFCMToken(notification:)),
+        name: Notification.Name("FCMToken"), object: nil)
 
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -128,7 +132,33 @@ class ChatViewController: MessagesViewController {
        
     }
     
+    @objc func displayFCMToken(notification: NSNotification){
+      guard let userInfo = notification.userInfo else {return}
+      if let fcmToken = userInfo["token"] as? String {
+        print("Received FCM token: \(fcmToken)")
+      }
+    }
+    
     private func setupInputButton() {
+        let token = Messaging.messaging().fcmToken
+           print("FCM token: \(token ?? "")")
+           // [END log_fcm_reg_token]
+
+           // [START log_iid_reg_token]
+           InstanceID.instanceID().instanceID { (result, error) in
+             if let error = error {
+               print("Error fetching remote instance ID from chat: \(error)")
+             } else if let result = result {
+               print("Remote instance ID token from chat: \(result.token)")
+              //hi self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
+             }
+           }
+        
+        // [START subscribe_topic]
+        Messaging.messaging().subscribe(toTopic: "weather") { error in
+          print("Subscribed to weather topic")
+        }
+        // [END subscribe_topic]
         let button = InputBarButtonItem()
         button.setSize(CGSize(width: 35, height: 35), animated: false)
         button.setImage(UIImage(systemName: "paperclip"), for: .normal)

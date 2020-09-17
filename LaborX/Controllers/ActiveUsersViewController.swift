@@ -38,7 +38,7 @@ class ActiveUsersViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
-        Firestore.firestore().collection("employees").whereField("Current Location", isEqualTo: "WO11619 - GM")
+        Firestore.firestore().collection("employees").whereField("Current Location", isEqualTo: "Available").limit(to: sum)
             .getDocuments() { ( QuerySnapshot, err) in
             if let err = err {
                 print("we have an error: \(err)")
@@ -62,7 +62,7 @@ class ActiveUsersViewController: UIViewController, UITableViewDelegate, UITableV
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of requests:\(employee.count)")
+        print("Number of requests:\(sum)")
         return employee.count
     }
        

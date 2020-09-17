@@ -10,6 +10,7 @@ import UIKit
 import FirebaseFirestore
 
 
+
 class RequestDetailViewController: UIViewController {
     
     
@@ -72,6 +73,8 @@ class RequestDetailViewController: UIViewController {
                     self.shiftThreeStartTime.text = document["shiftThreeStartTime"] as? String ?? "Anonymous"
                     self.twic.text = document["twic"] as? String ?? "Anonymous"
                     self.piece.text = document["piece"] as? String ?? "Anonymous"
+                    
+                    
                 
                 
                 
@@ -116,4 +119,6 @@ class RequestDetailViewController: UIViewController {
 //                        }
 //                    }
         }
+        
+
 }

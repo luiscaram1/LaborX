@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E67C12ECE938B0A24C9A4F1 /* Pods_LaborX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F650DB53C1EFFF44AB24148 /* Pods_LaborX.framework */; };
 		C816F840250C08B1004DAE23 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */; };
 		C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */; };
 		C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */; };
@@ -33,13 +34,11 @@
 		C8DA3BD424F882C50000B009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DA3BD324F882C50000B009 /* Assets.xcassets */; };
 		C8DA3BD724F882C50000B009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DA3BD524F882C50000B009 /* LaunchScreen.storyboard */; };
 		C8F134AB251234610043AC06 /* employeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F134AA251234610043AC06 /* employeeList.swift */; };
-		FFB55B2359CDE8267C38DC5E /* Pods_LaborX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37794A551E78A3ED560AE591 /* Pods_LaborX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37794A551E78A3ED560AE591 /* Pods_LaborX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaborX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
-		B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.release.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.release.xcconfig"; sourceTree = "<group>"; };
+		5F650DB53C1EFFF44AB24148 /* Pods_LaborX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaborX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C827EA9290271FF0E36B946 /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
 		C803D5582512974000523737 /* LaborX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaborX.entitlements; sourceTree = "<group>"; };
 		C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		C8DA3BD624F882C50000B009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8DA3BD824F882C50000B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F134AA251234610043AC06 /* employeeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeeList.swift; sourceTree = "<group>"; };
+		E98DD327F56E94F5538D473F /* Pods-LaborX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.release.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB55B2359CDE8267C38DC5E /* Pods_LaborX.framework in Frameworks */,
+				9E67C12ECE938B0A24C9A4F1 /* Pods_LaborX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,18 +86,10 @@
 		6188F78DA8F6C22C052BDB28 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */,
-				B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */,
+				7C827EA9290271FF0E36B946 /* Pods-LaborX.debug.xcconfig */,
+				E98DD327F56E94F5538D473F /* Pods-LaborX.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		78BC5D5ACCD796C077B38CF6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				37794A551E78A3ED560AE591 /* Pods_LaborX.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C8A49D3D24FAB7470089445C /* Controllers */ = {
@@ -183,7 +175,7 @@
 				C8DA3BC924F882C40000B009 /* LaborX */,
 				C8DA3BC824F882C40000B009 /* Products */,
 				6188F78DA8F6C22C052BDB28 /* Pods */,
-				78BC5D5ACCD796C077B38CF6 /* Frameworks */,
+				D73937332D2C86ED0E12B1F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +201,14 @@
 			path = LaborX;
 			sourceTree = "<group>";
 		};
+		D73937332D2C86ED0E12B1F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F650DB53C1EFFF44AB24148 /* Pods_LaborX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,11 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8DA3BDB24F882C50000B009 /* Build configuration list for PBXNativeTarget "LaborX" */;
 			buildPhases = (
-				D1379B051E3C20FD32CC6896 /* [CP] Check Pods Manifest.lock */,
+				7CE7038AB5E91FECE861B639 /* [CP] Check Pods Manifest.lock */,
 				C8DA3BC324F882C40000B009 /* Sources */,
 				C8DA3BC424F882C40000B009 /* Frameworks */,
 				C8DA3BC524F882C40000B009 /* Resources */,
-				F1EAAB4435C785F63B27A299 /* [CP] Embed Pods Frameworks */,
+				0A301EFA00CFBE0BBD25FFFC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,7 +279,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D1379B051E3C20FD32CC6896 /* [CP] Check Pods Manifest.lock */ = {
+		0A301EFA00CFBE0BBD25FFFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CE7038AB5E91FECE861B639 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -299,23 +316,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1EAAB4435C785F63B27A299 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LaborX/Pods-LaborX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -468,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -480,12 +480,13 @@
 		};
 		C8DA3BDC24F882C50000B009 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45AFA84BDD4E1FE3AC1BFE0F /* Pods-LaborX.debug.xcconfig */;
+			baseConfigurationReference = 7C827EA9290271FF0E36B946 /* Pods-LaborX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LaborX/LaborX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ACX9F72932;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -493,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laborxclient.LaborX;
 				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -503,12 +505,13 @@
 		};
 		C8DA3BDD24F882C50000B009 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B07F6588DA409F33D565AD4F /* Pods-LaborX.release.xcconfig */;
+			baseConfigurationReference = E98DD327F56E94F5538D473F /* Pods-LaborX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LaborX/LaborX.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ACX9F72932;
 				INFOPLIST_FILE = LaborX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -516,6 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laborxclient.LaborX;
 				PRODUCT_NAME = LaborX;
 				PROVISIONING_PROFILE_SPECIFIER = "";

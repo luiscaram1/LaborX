@@ -14,7 +14,7 @@ import MessageKit
 import Firebase
 
 
-var sum = Int()
+var sum = 1
 var employeeLocation = ""
 class RequestsViewController: UIViewController, UITextFieldDelegate {
     
@@ -79,6 +79,8 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     var defaultShiftThreeWorkerQuantity = "0"
     var defaultShiftThreeNumHours = "0"
     
+    var remoteInstance = ""
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +98,7 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
                print("Error fetching remote instance ID: \(error)")
              } else if let result = result {
                print("Remote instance ID token: \(result.token)")
+                self.remoteInstance = result.token
               //hi self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
              }
            }
@@ -338,6 +341,9 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitRequest(_ sender: Any) {
         print("tapped")
+        
+        let sender = PushNotificationSender()
+        sender.sendPushNotification(to: remoteInstance, title: "Request Notification", body: "Testing request button tapped")
 
         if(typeOfServiceField.text == "Select Service Type") {
                 let alert = UIAlertController(title: "Please Select Service", message: "Click OK to go back", preferredStyle: UIAlertController.Style.alert)
@@ -372,13 +378,13 @@ class RequestsViewController: UIViewController, UITextFieldDelegate {
             
             
             let num1 = Int(shiftOneWorkerQuantityField.text!)
-            print(" The number One is\(num1 ?? 0)")
+            print(" The number One is\(num1 ?? 1)")
             
             let num2 = Int(shiftTwoWorkerQuantityField.text!)
-            print(" The number One is\(num2 ?? 0)")
+            print(" The number One is\(num2 ?? 1)")
             
             let num3 = Int(shiftTwoWorkerQuantityField.text!)
-            print(" The number One is\(num3 ?? 0)")
+            print(" The number One is\(num3 ?? 1)")
             
             sum = num1! + num2! + num3!
             print(sum)

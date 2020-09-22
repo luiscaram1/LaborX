@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9E67C12ECE938B0A24C9A4F1 /* Pods_LaborX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F650DB53C1EFFF44AB24148 /* Pods_LaborX.framework */; };
 		C816F840250C08B1004DAE23 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */; };
+		C82BB3BD25178BD500DE12C5 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BB3BC25178BD500DE12C5 /* PushNotificationManager.swift */; };
+		C82BB3C025178DFC00DE12C5 /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BB3BF25178DFC00DE12C5 /* PushNotificationSender.swift */; };
 		C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */; };
 		C82E2C5F24FB1FD0006CFDED /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */; };
 		C82E2C6124FB1FE2006CFDED /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */; };
@@ -41,6 +43,8 @@
 		7C827EA9290271FF0E36B946 /* Pods-LaborX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaborX.debug.xcconfig"; path = "Target Support Files/Pods-LaborX/Pods-LaborX.debug.xcconfig"; sourceTree = "<group>"; };
 		C803D5582512974000523737 /* LaborX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaborX.entitlements; sourceTree = "<group>"; };
 		C816F83F250C08B1004DAE23 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
+		C82BB3BC25178BD500DE12C5 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		C82BB3BF25178DFC00DE12C5 /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
 		C82E2C5C24FB086F006CFDED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C82E2C5E24FB1FD0006CFDED /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		C82E2C6024FB1FE2006CFDED /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				C8AB10952511378D00FFBA43 /* RequestDetailViewController.swift */,
 				C87805992511DD4400EE418A /* requestList.swift */,
 				C8F134AA251234610043AC06 /* employeeList.swift */,
+				C82BB3BC25178BD500DE12C5 /* PushNotificationManager.swift */,
+				C82BB3BF25178DFC00DE12C5 /* PushNotificationSender.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,12 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82BB3BD25178BD500DE12C5 /* PushNotificationManager.swift in Sources */,
 				C8A49D4424FAB8DA0089445C /* LoginViewController.swift in Sources */,
 				C82E2C6324FB201D006CFDED /* ActiveUsersViewController.swift in Sources */,
 				C878059A2511DD4400EE418A /* requestList.swift in Sources */,
 				C82E2C5D24FB086F006CFDED /* DatabaseManager.swift in Sources */,
 				C8A49D4A24FAB92E0089445C /* VideoPlayerViewController.swift in Sources */,
 				C8F134AB251234610043AC06 /* employeeList.swift in Sources */,
+				C82BB3C025178DFC00DE12C5 /* PushNotificationSender.swift in Sources */,
 				C8A49D4C24FAB96F0089445C /* NewConversationViewController.swift in Sources */,
 				C8A49D4624FAB8EB0089445C /* RegisterViewController.swift in Sources */,
 				C8DA3BCF24F882C40000B009 /* ConversationsViewController.swift in Sources */,

@@ -15,6 +15,8 @@ import AVFoundation
 import AVKit
 import CoreLocation
 
+var remoteInstance = ""
+
 
 struct Message: MessageType {
     public var sender: SenderType
@@ -116,6 +118,8 @@ class ChatViewController: MessagesViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -150,6 +154,8 @@ class ChatViewController: MessagesViewController {
                print("Error fetching remote instance ID from chat: \(error)")
              } else if let result = result {
                print("Remote instance ID token from chat: \(result.token)")
+                
+                remoteInstance = result.token
               //hi self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
              }
            }
@@ -500,6 +506,10 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             DatabaseManager.shared.sendMessage(to: conversationId, otherUserEmail: otherUserEmail, name: name, newMessage: message, completion: { [weak self ]success in
                 if success {
                     self?.messageInputBar.inputTextView.text = nil
+                    
+                    let sender = PushNotificationSender()
+                    sender.sendPushNotification(to: remoteInstance, title: "Chat Notification", body: "Testing Chat Button Tapped")
+                    
                     print("message sent")
                 }
                 else {
